@@ -162,22 +162,22 @@
 
           if (optionSelected && !option.default){
             price += option.price; 
-            console.log('PRICE:', price);
 
           } else if (!optionSelected && option.default){
             price -= option.price;
-            console.log('PRICE:', price);
 
           }
-          
+        
+          const allImages = thisProduct.imageWrapper.querySelectorAll('.'+ paramName +'-'+ optionName);
+
           if (optionSelected){
-            const allImages = thisProduct.imageWrapper.querySelectorAll('.'+ paramName +'-'+ optionName);
+
             for (const image of allImages){
               image.classList.add(classNames.menuProduct.imageVisible);
             }
-            
+
           } else {
-            const allImages = thisProduct.imageWrapper.querySelectorAll('.'+ paramName +'-'+ optionName);
+
             for (const image of allImages){
               image.classList.remove(classNames.menuProduct.imageVisible);
             }
