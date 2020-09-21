@@ -14,7 +14,7 @@ utils.createPropIfUndefined = function(obj, key, value = []){
   }
 };
 
-utils.serializeFormToObject = function(form){
+utils.serializeFormToObject= function(form){
   let output = {};
   if (typeof form == 'object' && form.nodeName == 'FORM') {
     for (let field of form.elements) {
@@ -52,3 +52,5 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
 Handlebars.registerHelper('joinValues', function(input, options) {
   return Object.values(input).join(options.fn(this));
 });
+
+export default utils;
