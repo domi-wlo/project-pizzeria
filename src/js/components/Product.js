@@ -50,7 +50,7 @@ class Product{
     //console.log(clickableTrigger);
     /* START: click event listener to trigger */
     clickableTrigger.addEventListener('click', function(){
-      console.log('clicked');
+      //console.log('clicked');
       /* prevent default action for event */
       event.preventDefault();
       /* toggle active class on element of thisProduct */
@@ -132,7 +132,7 @@ class Product{
             };
           }
           thisProduct.params[paramName].options[optionName] = option.label;
-          console.log(thisProduct.params);
+          //console.log(thisProduct.params);
 
           for (const image of allImages){
             image.classList.add(classNames.menuProduct.imageVisible);

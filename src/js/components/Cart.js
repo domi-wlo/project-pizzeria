@@ -12,7 +12,7 @@ class Cart{
     thisCart.getElements(element);
     thisCart.initActions();
 
-    console.log('new Cart:',thisCart);
+    //console.log('new Cart:',thisCart);
   }
 
   getElements(element){
@@ -81,7 +81,7 @@ class Cart{
     }
 
     thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
-    console.log('totalPrice: ',thisCart.totalPrice);
+    //console.log('totalPrice: ',thisCart.totalPrice);
 
     for (let key of thisCart.renderTotalsKeys){
       for(let elem of thisCart.dom[key]){
