@@ -9,6 +9,7 @@
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,10 +17,12 @@
   <header class="header">
     <div class="container">
       <div class="header__wrapper">
-        <div class="logo">
-          <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
-          <h2 class="logo__subtitle">the best homemade Italian food</h2>
-        </div>
+        <a href="#">
+          <div class="logo">
+            <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
+            <h2 class="logo__subtitle">the best homemade Italian food</h2>
+          </div>
+        </a>
         <div class="main-nav">
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
@@ -62,6 +65,188 @@
   </header>
 
   <div id="pages">
+
+    <div class="container">
+      <section id="main-page" class="main-content main-wrapper ">
+  
+          <div class="banners container">
+            <div class="row">
+              <div class="col-sm-6 banner">
+                <a href="#order">
+                  <div class="card mb-1 justify-content-center align-items-center">
+                    <img src="images/assets/pizza-1.jpg">
+                    <div class="card-body position-absolute">
+                      <div class="card-title">
+                        <h3 class="banner-title title-animated">Order online</h3>
+                        <p class="banner-text">Delicious deliver</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-6 banner">
+                <a href="#booking">
+                  <div class="card mb-1 justify-content-center align-items-center">
+                    <img src="images/assets/pizza-2.jpg">
+                    <div class="card-body position-absolute">
+                      <div class="card-title">
+                        <h3 class="banner-title title-animated">Book a table</h3>
+                        <p class="banner-text">Nice place!</p>
+                      </div>
+                    </div>
+                  </div>  
+                </a>
+              </div>
+              <div class="col-sm-12 banner">
+                <div class="card mb-1 no-picture justify-content-center align-items-center">
+                  <div class="card-body position-absolute">
+                    <div class="card-title">
+                      <h3 class="banner-title">Opening hours:</h3>
+                      <p class="banner-subtitle">TUE-SUN, 12AM-12PM</p>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+  
+          <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="container">
+                  <div class="row carousel-background">
+                    <div class="d-none d-sm-block col-md-5">
+                      <img src="images/assets/pizza-3.jpg" alt="First slide">
+                    </div>
+                    <div class="col-md-7 carousel-body">
+                      <h4>Amazing service</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Pretium vulputate sapien nec sagittis aliquam.</p>
+                      <p class="author">- Margaret</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container">
+                  <div class="row carousel-background">
+                    <div class="d-none d-md-block col-md-5">
+                      <img src="images/assets/pizza-2.jpg" alt="First slide">
+                    </div>
+                    <div class="col-md-7 carousel-body">
+                      <h4>Very Delicious</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Pretium vulputate sapien nec sagittis aliquam.</p>
+                      <p class="author">- Bob</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container">
+                  <div class="row carousel-background">
+                    <div class="d-none d-sm-block col-md-5">
+                      <img src="images/assets/pizza-3.jpg" alt="First slide">
+                    </div>
+                    <div class="col-md-7 carousel-body">
+                      <h4>Nice Place</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Pretium vulputate sapien nec sagittis aliquam.</p>
+                      <p class="author">- Dora</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="container ig-gallery">
+            <div class="row">
+              <div class="col-sm-6 col-md-4 gallery">
+                <img src="images/assets/pizza-4.jpg">
+                <div class="overlay"></div>
+                <div class="icons">
+                  <a href="#like" class="icon">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                  <a href="#share" class="icon">
+                    <i class="fas fa-share-alt"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 gallery">
+                <img src="images/assets/pizza-5.jpg">
+                <div class="overlay"></div>
+                <div class="icons">
+                  <a href="#like" class="icon">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                  <a href="#share" class="icon">
+                    <i class="fas fa-share-alt"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 gallery">
+                <img src="images/assets/pizza-6.jpg">
+                <div class="overlay"></div>
+                <div class="icons">
+                  <a href="#like" class="icon">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                  <a href="#share" class="icon">
+                    <i class="fas fa-share-alt"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 gallery">
+                <img src="images/assets/pizza-7.jpg">
+                <div class="overlay"></div>
+                <div class="icons">
+                  <a href="#like" class="icon">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                  <a href="#share" class="icon">
+                    <i class="fas fa-share-alt"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 gallery">
+                <img src="images/assets/pizza-8.jpg">
+                <div class="overlay"></div>
+                <div class="icons">
+                  <a href="#like" class="icon">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                  <a href="#share" class="icon">
+                    <i class="fas fa-share-alt"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 gallery">
+                <img src="images/assets/pizza-9.jpg">
+                <div class="overlay"></div>
+                <div class="icons">
+                  <a href="#like" class="icon">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                  <a href="#share" class="icon">
+                    <i class="fas fa-share-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="#instagram">View more on instagram</a>
+          </div>
+  
+        </section>
+    </div>
+
+
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -243,6 +428,9 @@
     </article> <!-- .product -->
   </script>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="vendor/range-slider.min.js" type="module"></script>
