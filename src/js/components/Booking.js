@@ -47,10 +47,13 @@ class Booking{
       thisBooking.updateDOM();
     });
 
+    thisBooking.bookTable();
+
     thisBooking.dom.wrapper.addEventListener('submit', function(event){
       event.preventDefault();
       thisBooking.sendBooking();
     });
+
   }   
 
   getData(){
@@ -135,8 +138,6 @@ class Booking{
     //console.log('thisBooking.booked', thisBooking.booked);
 
     thisBooking.updateDOM();
-    //thisBooking.chooseTable();
-
 
   }
 
@@ -178,6 +179,7 @@ class Booking{
     }
 
     for(let table of thisBooking.dom.tables){
+
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);
       if(!isNaN(tableId)){
         tableId =  parseInt(tableId);
@@ -194,14 +196,50 @@ class Booking{
         table.classList.remove(classNames.booking.tableBooked);
         table.classList.remove(classNames.booking.tableChosen);
       }
+    }
+  }
+
+  bookTable(){
+    const thisBooking = this;
+
+    for(let table of thisBooking.dom.tables){
+
+      let tableId = table.getAttribute(settings.booking.tableIdAttribute);
+      if(!isNaN(tableId)){
+        tableId =  parseInt(tableId);
+      }
 
       table.addEventListener('click', function(){
         if (!table.classList.contains(classNames.booking.tableBooked)){
           table.classList.add(classNames.booking.tableChosen);
           thisBooking.table = tableId;
-          //console.log('table', thisBooking.table);
-        } 
+          
+          thisBooking.checkAvailability(thisBooking.table);
+        }
       });
+    }
+  }
+
+  checkAvailability(table) {
+    const thisBooking = this;
+
+    thisBooking.maxHourAmount = 0;
+
+    for (let hour = thisBooking.hour; hour < settings.hours.close; hour += 0.5){
+
+      if(typeof thisBooking.booked[thisBooking.date][hour] == 'undefined'){
+        console.log('maximum ', thisBooking.date, hour, thisBooking.booked[thisBooking.date][hour]);
+        thisBooking.maxHourAmount += 0.5;
+      } else if (!thisBooking.booked[thisBooking.date][hour].includes(table)){
+        thisBooking.maxHourAmount += 0.5;
+      } else {
+        break;
+      }
+
+      if (thisBooking.maxHourAmount == 0.5){
+        settings.amountWidget.defaultMin = 0.5;
+      }
+      settings.amountWidget.defaultMax = thisBooking.maxHourAmount;
     }
   }
 
@@ -238,14 +276,6 @@ class Booking{
         thisBooking.getData();
       });
     
-
-  }
-
-  checkAvailability() {
-    const thisBooking = this;
-
-    console.log(thisBooking);
-
 
   }
 
