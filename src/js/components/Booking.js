@@ -241,6 +241,14 @@ class Booking{
 
   }
 
+  checkAvailability() {
+    const thisBooking = this;
+
+    console.log(thisBooking);
+
+
+  }
+
 }  
 
 export default Booking;

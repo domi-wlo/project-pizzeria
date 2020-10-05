@@ -34,7 +34,7 @@ class BaseWidget{
   }
 
   parseValue(value){
-    return parseInt(value);
+    return parseFloat(value);
   }
 
   isValid(value){
