@@ -220,7 +220,7 @@ class Booking{
     }
   }
 
-  checkAvailability(table) {
+  checkAvailability(table){
     const thisBooking = this;
 
     thisBooking.maxHourAmount = 0;
