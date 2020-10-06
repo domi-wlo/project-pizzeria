@@ -224,23 +224,22 @@ class Booking{
     const thisBooking = this;
 
     thisBooking.maxHourAmount = 0;
+    
+    let hour = thisBooking.hour;
+    const bookedOnDate = thisBooking.booked[thisBooking.date];
 
-    for (let hour = thisBooking.hour; hour < settings.hours.close; hour += 0.5){
-
-      if(typeof thisBooking.booked[thisBooking.date][hour] == 'undefined'){
-        console.log('maximum ', thisBooking.date, hour, thisBooking.booked[thisBooking.date][hour]);
-        thisBooking.maxHourAmount += 0.5;
-      } else if (!thisBooking.booked[thisBooking.date][hour].includes(table)){
+    for (hour ; hour < settings.hours.close; hour += 0.5){
+      if(typeof bookedOnDate[hour] == 'undefined' || !bookedOnDate[hour].includes(table)){
         thisBooking.maxHourAmount += 0.5;
       } else {
         break;
       }
-
-      if (thisBooking.maxHourAmount == 0.5){
-        settings.amountWidget.defaultMin = 0.5;
-      }
-      settings.amountWidget.defaultMax = thisBooking.maxHourAmount;
     }
+
+    settings.amountWidget.defaultValue = 0.5;
+    thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
+    settings.amountWidget.defaultMax = thisBooking.maxHourAmount;
+    
   }
 
   sendBooking(){
